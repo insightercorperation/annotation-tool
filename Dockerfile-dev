@@ -1,0 +1,7 @@
+FROM node:10.15.2
+
+RUN apt-get -y update
+RUN apt-get -y upgrade
+
+WORKDIR /uploads
+WORKDIR /app

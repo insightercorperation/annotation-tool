@@ -1,0 +1,12 @@
+cmudict==0.4.4
+et-xmlfile==1.0.1
+jdcal==1.4.1
+numpy==1.19.1
+openpyxl==3.0.4
+pandas==1.1.0
+pronouncing==0.2.0
+python-dateutil==2.8.1
+python-Levenshtein-wheels==0.13.1
+pytz==2020.1
+six==1.15.0
+xlrd==1.2.0

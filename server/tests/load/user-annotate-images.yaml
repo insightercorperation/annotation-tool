@@ -1,0 +1,21 @@
+config:
+  target: '{{ $processEnvironment.TARGET_HOST }}'
+  phases:
+    - duration: 100
+      arrivalRate: 1
+      name: user
+scenarios:
+  # We define one scenario:
+  - name: '특정 프로젝트에 이미지 라벨링 작업을 함'
+    flow:
+      - loop:
+          - get:
+              url: '/label/13/297c7dfd-c38c-463e-b398-ed072d3d2ba0'
+          - think: 1
+          - get:
+              url: '/api/getLabelingInfo'
+              qs:
+                projectId: '13'
+                projectHash: '297c7dfd-c38c-463e-b398-ed072d3d2ba0'
+                imageId: '4'
+        count: 1000

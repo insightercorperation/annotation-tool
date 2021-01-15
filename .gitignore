@@ -1,0 +1,16 @@
+node_modules
+
+# pycharm
+.idea/
+
+.DS_Store
+yarn-error.log
+
+# 로컬 테스트 db
+localdb
+
+# secret
+SECRET
+
+# env
+.env

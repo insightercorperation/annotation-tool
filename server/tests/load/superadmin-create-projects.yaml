@@ -1,0 +1,30 @@
+config:
+  target: '{{ $processEnvironment.TARGET_HOST }}'
+  phases:
+    - duration: 10
+      arrivalRate: 1
+      name: superadmin
+scenarios:
+  # We define one scenario:
+  - name: '프로젝트 생성 후 대량의 이미지 추가'
+    flow:
+      - get:
+          url: '/api/auth'
+          qs:
+            password: '{{ $processEnvironment.ADMIN_PASSWORD }}'
+      - think: 1
+      - post:
+          url: '/api/projects'
+          capture:
+            json: '$.id'
+            as: 'projectId'
+      - loop:
+          - post:
+              url: '/api/images'
+              json:
+                projectId: '{{ projectId }}'
+                urls:
+                  [
+                    https://3.img-dpreview.com/files/p/TS1200x900~sample_galleries/1330372094/1693761761.jpg,
+                  ]
+        count: 1000
