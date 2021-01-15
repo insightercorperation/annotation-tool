@@ -21,9 +21,5 @@ services:
     volumes:
       - "./localdb:/var/lib/mysql/"
       - "./dbconf:/etc/mysql/conf.d"
-    env_file: .env.dev
-    environment:
-      - MYSQL_DATABASE
-      - MYSQL_USER
-      - MYSQL_PASSWORD
-      - MYSQL_ROOT_PASSWORD
+    env_file:
+      - .env.dev
