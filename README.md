@@ -39,29 +39,3 @@ yarn dev
 # docker-compose.yml 파일과 .env.dev 모두 바꿔야 함
 http://localhost:3001
 ```
-
-## 배포하기
-
-> 미리 DB, table, user, 권한부여가 진행되어야 테이블을 생성할 수 있습니다.
-
-1. ssh 접속
-2. 최신 코드 가져오기
-3. `.env` 파일 준비
-4. `./serve_production.sh {scale}`
-
-## 배포용 docker-compose (docker-compose-prod.yml)
-
-배표용 compose 파일은 테스트와 달리 nginx를 사용하고 `.env` 파일을
-활용해서 환경변수를 설정해 주어야 함.
-
-`.env` 파일 설명
-(docker-compose-prod.yml과 같은 위치)
-
-(상세 내용은 관리자에게 따로 문의)
-
-- DB_HOST: 데이터 베이스 호스트
-- DB_PORT: 데이터 베이스 포트
-- DB_NAME: 데이터 베이스 이름
-- DB_USER: 데이터 베이스 사용자
-- DB_PASSWORD: 데이터 베이스 비밀번호
-- ADMIN_PASSWORD: 웹 관리자 비밀번호

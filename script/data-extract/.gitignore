@@ -1,7 +1,0 @@
-__pycache__
-.DS_Store
-
-# output 파일
-input
-main_*
-src/output/biblio*
