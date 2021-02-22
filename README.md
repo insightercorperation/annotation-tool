@@ -17,7 +17,7 @@ docker-compose up
 docker ps
 
 # 새로운 터미널에서 서버 컨테이너 접속
-# markcloud-annotation_server 이미지를 가지는 컨테이너에 접속
+# annotation-tool_server 이미지를 가지는 컨테이너에 접속
 docker attach {containerID}
 
 # (만약에 설치를 하지 않은 경우에만) 의존성 설치
